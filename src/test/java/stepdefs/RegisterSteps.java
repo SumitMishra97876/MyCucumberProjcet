@@ -29,8 +29,11 @@ public class RegisterSteps extends TestBase {
 	@When("user enter details from excel {string}")
 	public void user_enter_details_from_excel(String row) {
 		
+		String filePath=rb.getString("filepath");
 		
-	List<Map<String,String>>dataMap=ExcelReader.data(System.getProperty("user.dir")+"\\src\\test\\resources\\Book1.xlsx", "Sheet1");
+		
+	//List<Map<String,String>>dataMap=ExcelReader.data(System.getProperty("user.dir")+"\\src\\test\\resources\\Book1.xlsx", "Sheet1");
+	List<Map<String,String>>dataMap=ExcelReader.data(filePath, "Sheet1");
 	
 	int index=Integer.parseInt(row)-1;
 	
