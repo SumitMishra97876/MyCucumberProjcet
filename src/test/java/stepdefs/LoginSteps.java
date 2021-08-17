@@ -10,15 +10,12 @@ import pageobjects.HomePage;
 public class LoginSteps extends TestBase {
 	
 	
-	@Given("user is on Login page")
-	public void user_is_on_login_page() {
-		
+	@Given("user in on Login page")
+	public void user_in_on_login_page() {
 		setup();
 		hp=new HomePage(driver);
 		hp.clickMyAccount();
 		lp=hp.lnkLogin();
-		
-	    
 	}
 	@When("the user enters username {string} and password {string}")
 	public void the_user_enters_username_and_password(String string, String string2) {
