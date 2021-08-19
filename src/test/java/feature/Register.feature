@@ -1,5 +1,5 @@
 Feature: Registration of users
-
+@Register
 Scenario Outline: Registering multiple users
 
 Given user is on Registration page

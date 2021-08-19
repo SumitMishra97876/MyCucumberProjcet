@@ -19,6 +19,12 @@ public class MyAccountPage {
 	@FindBy(xpath="//h2[text()='My Account']")
 	WebElement MyAccText;
 	
+	@FindBy(xpath="//input[@name='search']")
+	WebElement searchBar;
+	
+	@FindBy(xpath="//div[@id='search']/span//button")
+	WebElement searchButton;
+	
 	
 	public boolean verifyLogin()
 	{
@@ -32,8 +38,17 @@ public class MyAccountPage {
 		{
 			return(false);
 		}
+	}
 		
+	public void doProductSearch(String prodName)
+	{
+		searchBar.sendKeys(prodName);
+	}
 	
+	public void clickSearchButton()
+	{
+		searchButton.click();
+	}
 
 }
-}
+

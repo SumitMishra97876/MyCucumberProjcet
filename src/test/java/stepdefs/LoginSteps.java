@@ -1,6 +1,9 @@
 package stepdefs;
 
+
+
 import base.TestBase;
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,6 +16,7 @@ public class LoginSteps extends TestBase {
 	@Given("user in on Login page")
 	public void user_in_on_login_page() {
 		setup();
+		getUrl();
 		hp=new HomePage(driver);
 		hp.clickMyAccount();
 		lp=hp.lnkLogin();
@@ -61,7 +65,13 @@ public class LoginSteps extends TestBase {
 		
 		
 	}
-
+	
+	@After("@PositiveNegativeLogin")
+	public void close()
+	{
+       
+       teardown();
+	}
 
 
 

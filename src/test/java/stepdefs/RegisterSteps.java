@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import base.TestBase;
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -20,6 +21,7 @@ public class RegisterSteps extends TestBase {
 		
 		
 		setup();
+		getUrl();
 		hp=new HomePage(driver);
 		hp.clickMyAccount();
 		rp=hp.clickRegisterLink();
@@ -67,6 +69,13 @@ public class RegisterSteps extends TestBase {
 	   
 	   Assert.assertEquals(AccountSuccessMsg, "Your Account Has Been Created!");
 	   
+	}
+	
+	@After("@Register")
+	public void close()
+	{
+       
+       teardown();
 	}
 
 
